@@ -6,11 +6,11 @@ Có 4 cách định nghĩa component:
 + kiểu arrow function (es6): () =>
 + kiểu class: 
 
-JSX là javascript extension: là 1 file mở rộng cho phép viết mã html trong file javascript
-Component giúp cắt giao diện thành các thành phần độc lập có thể sử dụng lại nhiều lần.
-Component được xây dụng cô lập để có thể quản lý và sử dụng hiệu quả khi cần thiết
+- JSX là javascript extension: là 1 file mở rộng cho phép viết mã html trong file javascript
+- Component giúp cắt giao diện thành các thành phần độc lập có thể sử dụng lại nhiều lần.
+- Component được xây dụng cô lập để có thể quản lý và sử dụng hiệu quả khi cần thiết
 
-
+```
 “Giới thiệu vể React JS – thư viện javascript phát triển bởi Facebook.
 – Sức mạnh khủng khiếp mà Facebook mang đến trong React, đó chính là mô hình DOM, làm tăng khả năng trình diễn các đối tượng trên nền web một cách hiệu quả & tốc độ mượt hơn bất kì Java Script Framework nào trước đây.
 – Mục đích mà Facebook nhắm đến trong React là “”Learn Once, Write Anywhere”” – Có nghĩa là sau khi hoàn tất khóa học React JS, ngoài việc bạn thiết kế được layout web, bạn còn sẽ có nền tảng vững chắc để tiếp cận React Native (Mobile App) mà không cần phải mất nhiều thời gian.
@@ -260,6 +260,6 @@ Phần 58 – Giao tiếp dữ liệu từ React js sang Node JS
 Phần 59 – Tổng kết ứng dụng
 172 – Cách quản lý code bằng github – download và chạy file project
 173 – Tổng kết ứng dụng Node React
-
+```
 
  
