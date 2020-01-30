@@ -6,13 +6,13 @@ class Header extends Component {
             <div>
 
                 <nav className="navbar navbar-inverse">
-                    <a className="navbar-brand" href="https://reactjs.org/docs/create-a-new-react-app.html">Title</a>
+                    <a className="navbar-brand" href="https://reactjs.org/docs/create-a-new-react-app.html">Bai02-Components</a>
                     <ul className="nav navbar-nav">
                         <li className="active">
-                            <a href="https://reactjs.org/docs/create-a-new-react-app.html">Home</a>
+                            <a href="https://reactjs.org/docs/create-a-new-react-app.html">Trang chủ</a>
                         </li>
                         <li>
-                            <a href="https://reactjs.org/docs/create-a-new-react-app.html">Link</a>
+                            <a href="https://reactjs.org/docs/create-a-new-react-app.html">Liên hệ</a>
                         </li>
                     </ul>
                 </nav>
