@@ -5,13 +5,13 @@ class Product extends Component {
     return (
       <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
         <div className="thumbnail">
-          <img src={this.props.img} alt="images"></img>
+          <img src={this.props.image} alt="images"></img>
           <div className="caption">
             <h3>
-              {this.props.name}
+              {this.props.children}
             </h3>
             <p>
-              {this.props.name} VNĐ
+              {this.props.price} VNĐ
             </p>
             <p>
               <a href="https://www.facebook.com/" className="btn btn-primary">Them vao gio</a>
