@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 
 class Product extends Component {
-  onAddToCart(text){
-    alert(text);
-    console.log(text);
+  // constructor(props){
+  //   super(props);
+  //   this.onAddToCart = this.onAddToCart.bind(this);
+  // }
+  // onAddToCart(){
+  //   alert(this.props.children + ' - ' + this.props.price);
+  // }
+  //Su dung arrow function
+  onAddToCart2 = () =>{
+    alert(this.props.children + ' - ' + this.props.price);
   }
   render() {
     return (
@@ -18,7 +25,7 @@ class Product extends Component {
               {this.props.price} VNĐ
             </p>
             <p>
-              <a className="btn btn-default" onClick={() => {this.onAddToCart(this.props.children)}}>Mua ngay</a>
+              <a className="btn btn-default" onClick={this.onAddToCart2 }>Mua ngay</a>
             </p>
           </div>
         </div>
