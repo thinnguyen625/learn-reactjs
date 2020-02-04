@@ -1,42 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
+import Result from './components/Result'
+import Reset from './components/Reset';
+import ColorPicker from './components/ColorPicker';
+import SizeSetting from './components/SizeSetting';
 
-function App() {
-   return (
+
+
+class App extends Component {
+   constructor(props) {
+      super(props);
+      this.state = {
+         color : 'red', 
+         fontSize : '15' 
+      };
+   }
+
+   onSetColor(params){
+      console.log(params);
+   
+   }
+
+   render() {
+      return (
          <div className="container mt-50">
             <div className="row">
+
+               < ColorPicker color={this.state.color} onReceiveColor={this.onSetColor} />
                <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <div className="panel panel-primary">
-                     <div className="panel-heading">
-                        <h3 className="panel-title">Color Picker</h3>
-                     </div>
-                     <div className="panel-body">
-                        
-                     </div>
-                  </div>
+                  < SizeSetting />
+                  < Reset />
                </div>
-               <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                  <div className="panel panel-primary">
-                     <div className="panel-heading">
-                        <h3 className="panel-title">Size: 15px</h3>
-                     </div>
-                     <div className="panel-body">
-                        <button type="button" className="btn btn-success">Giảm</button> &nbsp;
-                        <button type="button" className="btn btn-success">Tăng</button>
-                     </div>
-                     <button type="button" className="btn btn-primary">Reset</button>
-                  </div>
-               </div>
-               <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <p>Color : red - Fontsize : 15px</p>
-                  <div id="_content">
-                     Nội dung setting
-                  </div>
-               </div>
+               < Result />
                
             </div>
          </div>
-         );
-      }
-      
-      export default App;
+      );
+   }
+}
+
+export default App;
