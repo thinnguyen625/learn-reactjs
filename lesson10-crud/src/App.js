@@ -11,7 +11,8 @@ class App extends Component {
       
       super(props);
       this.state = {
-         tasks: [] // id : unique, name, status
+         tasks: [], // id : unique, name, status
+         isDisplayForm : false
       }
    }
 
@@ -56,8 +57,21 @@ class App extends Component {
       localStorage.setItem('tasks', JSON.stringify(tasks));
    }
 
+   onToggleForm = () => {
+      this.setState({
+         isDisplayForm : !this.state.isDisplayForm
+      })
+   }
+
+   onCloseForm = () => {
+      this.setState({
+         isDisplayForm : false
+      })
+   }
+
    render() {
-      var { tasks } = this.state; //var tasks = this.state.task
+      var { tasks, isDisplayForm } = this.state; //var tasks = this.state.task
+      var elmTaskForm = isDisplayForm ? <TaskForm onCloseForm={this.onCloseForm}/> : ''
       return (
          <div className="container">
             <div className="text-center">
@@ -67,10 +81,14 @@ class App extends Component {
             <div className="row">
                <div className="col-xs-4 col-sm-4 col-md-4 col-lg-4">
                   {/* form */}
-                  <TaskForm />
+                  {elmTaskForm}
                </div>
-               <div className="col-xs-8 col-sm-8 col-md-8 col-lg-8">
-                  <button type="button" className="btn btn-primary">
+               <div className={isDisplayForm === false ? "col-xs-12 col-sm-12 col-md-12 col-lg-12" : "col-xs-8 col-sm-8 col-md-8 col-lg-8"}>
+                  <button 
+                     type="button" 
+                     className="btn btn-primary"
+                     onClick={this.onToggleForm}
+                  >
                      <span className="fa fa-plus mr-5" /> Thêm Công Việc
                   </button>
 
