@@ -36,3 +36,19 @@
     transform: rotate(360deg);
   }
 }
+
+.mt-15{
+  margin-top: 24px;
+}
+
+.text-right{
+  margin-left: 195px;
+}
+
+.mr-5{
+  margin-right: 10px;
+}
+
+.ml-5{
+  margin-left: 10px;
+}
