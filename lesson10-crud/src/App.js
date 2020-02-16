@@ -24,7 +24,7 @@ class App extends Component {
    //       })
    //    }
    // }
-   componentWillMount(){
+   UNSAFE_componentWillMount(){
       if(localStorage && localStorage.getItem('tasks')){
          this.setState({
               tasks: JSON.parse(localStorage.getItem('tasks'))
