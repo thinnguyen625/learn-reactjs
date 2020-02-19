@@ -42,8 +42,8 @@ class TaskForm extends Component {
         this.props.onCloseForm();
     }
 
-    onChange = (event)=>{
-        let target = event.target;
+    onChange = (event) => {
+        var target = event.target;
         var name = target.name;
         var value = target.value;
         if(name === 'status'){
@@ -54,12 +54,12 @@ class TaskForm extends Component {
         })
     }
 
-    submitFn = (event) =>{
-        event.preventDefault();
-        this.props.onSubmit(this.state);
-        this.clearFn();
-        this.closeForm();
-    }
+    // submitFn = (event) =>{
+    //     event.preventDefault();
+    //     this.props.onSubmit(this.state);
+    //     this.clearFn();
+    //     this.closeForm();
+    // }
 
     clearFn = () =>{
         this.setState({
@@ -67,6 +67,12 @@ class TaskForm extends Component {
             status: false
         })
     }
+
+    onSubmit = (event) => {
+        event.preventDefault();
+        this.props.onSubmit(this.state);
+    }
+
   render() {
       var { id } = this.state;
     return (
@@ -77,21 +83,24 @@ class TaskForm extends Component {
                         <span className="fa fa-times-circle text-right" onClick={this.closeForm}></span>
                     </h3>
                 </div>
+
                 <div className="panel-body">
-                    
-                    <form onSubmit={this.submitFn}>                                
-                        <div className="form-group">
+                    <form onSubmit = { this.onSubmit}>                                
+                        <div className = "form-group">
                             <label>Tên : </label>
-                            <input type="text" 
+                            <input type="text"
+                                name="name" 
                                 className="form-control" 
-                                name="name"
                                 value={this.state.name}
                                 onChange={this.onChange} />
                         </div>
                         <label>Trạng thái : </label>                                    
-                        <select name="status" className="form-control"
+                        <select 
+                            name="status" 
+                            className="form-control"
                             value={this.state.status}
-                            onChange={this.onChange}>
+                            onChange={this.onChange}
+                        >
                             <option value={ true }>Kích hoạt</option>
                             <option value={ false }>Ẩn</option>
                         </select>
