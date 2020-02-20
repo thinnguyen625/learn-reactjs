@@ -22,7 +22,6 @@ class TaskForm extends Component {
     }
 
     componentWillReceiveProps(nextProps){
-        console.log(nextProps);
         if(nextProps && nextProps.task){
             this.setState({
                 id: nextProps.task.id,
@@ -38,7 +37,7 @@ class TaskForm extends Component {
         }
     }
 
-    closeForm = () =>{
+    onCloseForm = () =>{
         this.props.onCloseForm();
     }
 
@@ -54,14 +53,7 @@ class TaskForm extends Component {
         })
     }
 
-    // submitFn = (event) =>{
-    //     event.preventDefault();
-    //     this.props.onSubmit(this.state);
-    //     this.clearFn();
-    //     this.closeForm();
-    // }
-
-    clearFn = () =>{
+    onClear = () =>{
         this.setState({
             name: "",
             status: false
@@ -71,6 +63,8 @@ class TaskForm extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         this.props.onSubmit(this.state);
+        this.onClear();
+        this.onCloseForm();
     }
 
   render() {
