@@ -42,7 +42,7 @@
 }
 
 .text-right{
-  margin-left: 195px;
+  float: right;
 }
 
 .mr-5{

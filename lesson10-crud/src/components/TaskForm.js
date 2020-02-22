@@ -74,7 +74,7 @@ class TaskForm extends Component {
                 <div className="panel-heading">
                     <h3 className="panel-title">
                         { id !== '' ? "Cập nhật công việc": "Thêm công việc" }
-                        <span className="fa fa-times-circle text-right" onClick={this.closeForm}></span>
+                        <span className="fa fa-times-circle text-right" onClick={this.onCloseForm}></span>
                     </h3>
                 </div>
 
@@ -103,7 +103,7 @@ class TaskForm extends Component {
                             
                             <button type="submit" className="btn btn-warning"><span className="fa fa-plus mr-5"></span>Lưu lại</button>
                             &nbsp;
-                            <button type="button" className="btn btn-danger" onClick={this.clearFn}><span className="fa fa-close mr-5"></span>Hủy</button>
+                            <button type="button" className="btn btn-danger" onClick={this.onCloseForm}><span className="fa fa-close mr-5"></span>Hủy</button>
                             
                         </div>
                     </form>                                
