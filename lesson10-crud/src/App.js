@@ -17,7 +17,8 @@ class App extends Component {
          filter: {
             name : '',
             status :  -1 
-         }
+         },
+         keyword: ''
       }
    }
 
@@ -158,15 +159,20 @@ class App extends Component {
       filterStatus = parseInt(filterStatus,10);
       this.setState({
          filter : {
-            name : filterName.toLowerCase(),
+            name : filterName.toLowerCase(), // chuyen ve chu thuong
             status : filterStatus
          }
       })
 
    }
 
+   onSearch = (keyword) => {
+      this.setState({
+         keyword : keyword
+      })
+   }
    render() {
-      var { tasks, isDisplayForm, taskEditing, filter } = this.state;
+      var { tasks, isDisplayForm, taskEditing, filter, keyword } = this.state;
       //console.log(filter);
       if(filter){
          if(filter.name){
@@ -185,6 +191,12 @@ class App extends Component {
             })
    
          //}
+      }
+
+      if(keyword){
+         tasks = tasks.filter((task) => {
+            return task.name.toLowerCase().indexOf(keyword) !== -1;
+         });
       }
       var elmTaskForm = isDisplayForm
          ? <TaskForm
@@ -222,7 +234,7 @@ class App extends Component {
 
 
                   {/* search-sort */}
-                  <Control />
+                  <Control onSearch = {this.onSearch}/>
 
                   {/* list */}
                   <TaskList
