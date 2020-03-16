@@ -1,4 +1,5 @@
-import { createStore } from 'redux'; 
+import { createStore } from 'redux';
+import { status, sort } from './action/index';
 
 var initialState = {
     status : false,
@@ -36,7 +37,7 @@ const store = createStore(myReducer);
 console.log("Default : ", store.getState()); 
 //Thực hiện công việc thay đổi status
 var action = { type : 'TOGGLE_STATUS' }
-store.dispatch(action);
+store.dispatch(status());
 
 console.log('TOGGLE_STATUS: ',store.getState());
 // Thực hiện công việc từ z -> a
@@ -48,5 +49,8 @@ var sortAction = {
         value : -1
     }
 }
-store.dispatch(sortAction);
+store.dispatch(sort({
+    by : 'name',
+    value : -1
+}));
 console.log('SORT :', store.getState());
